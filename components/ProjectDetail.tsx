@@ -1,0 +1,119 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Project } from "@/data/portfolio";
+import TypewriterBottom from "@/components/TypewriterBottom";
+import OberonCarousel from "@/components/OberonCarousel";
+
+interface ProjectDetailProps {
+  project: Project;
+  basePath: "architecture" | "photography";
+}
+
+const sectionLabel =
+  (basePath: string) =>
+  (basePath === "architecture" ? "Architecture / Design" : "Photography");
+
+export default function ProjectDetail({ project, basePath }: ProjectDetailProps) {
+  const backLabel = `Back to ${sectionLabel(basePath)}`;
+  const backHref = `/${basePath}`;
+
+  return (
+    <article
+      className={`project-detail ${project.slug === "buffalo-bull-sheet" ? "project-detail--buffalo-bull-sheet" : ""} ${project.slug === "boy" ? "project-detail--boy" : ""} ${project.slug === "ponderosa" ? "project-detail--ponderosa" : ""} ${project.slug === "sonic-storage" ? "project-detail--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-detail--resonant-ground" : ""} ${project.slug === "braeside" ? "project-detail--braeside" : ""} ${project.slug === "braeside-icon" ? "project-detail--braeside-icon" : ""} ${project.slug === "oberon" ? "project-detail--oberon" : ""}`}
+    >
+      {project.slug !== "oberon" && (
+        <h1 className="project-detail__title">{project.title}</h1>
+      )}
+      {project.slug === "oberon" && (
+        <TypewriterBottom
+          text={
+            Array.isArray(project.description)
+              ? project.description.join("/")
+              : project.description
+          }
+        />
+      )}
+      {project.slug === "oberon" && (
+        <OberonCarousel images={project.images} />
+      )}
+      {project.slug !== "oberon" && (
+        <>
+          {Array.isArray(project.description) ? (
+            project.description.map((paragraph, i) => (
+              <p key={i} className="project-detail__description">
+                {paragraph}
+              </p>
+            ))
+          ) : (
+            <p className="project-detail__description">{project.description}</p>
+          )}
+        </>
+      )}
+
+      {project.metadata && Object.keys(project.metadata).length > 0 && (
+        <dl className="project-detail__metadata">
+          {project.metadata.year && project.slug !== "oberon" && (
+            <>
+              <dt>Year</dt>
+              <dd>{project.metadata.year}</dd>
+            </>
+          )}
+          {project.metadata.location && (
+            <>
+              <dt>Location</dt>
+              <dd>{project.metadata.location}</dd>
+            </>
+          )}
+          {project.metadata.role && (
+            <>
+              <dt>Role</dt>
+              <dd>{project.metadata.role}</dd>
+            </>
+          )}
+          {project.metadata.tools && (
+            <>
+              <dt>Tools</dt>
+              <dd>{project.metadata.tools}</dd>
+            </>
+          )}
+          {project.metadata.collaborators && (
+            <>
+              <dt>Collaborators</dt>
+              <dd>{project.metadata.collaborators}</dd>
+            </>
+          )}
+        </dl>
+      )}
+
+      {project.slug !== "oberon" && (
+        <div className="project-detail__images">
+          {project.images.map((img, i) => (
+            <figure key={i} className="project-detail__figure">
+              <div className="project-detail__image-wrap">
+                <Image
+                  src={img.src}
+                  alt={img.caption || `${project.title} image ${i + 1}`}
+                  width={1200}
+                  height={800}
+                  className="project-detail__image"
+                  unoptimized
+                />
+              </div>
+              {img.caption && (
+                <figcaption className="project-detail__figcaption">
+                  {img.caption}
+                </figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+      )}
+
+      {project.slug !== "oberon" && (
+        <p className="project-detail__back">
+          <Link href={backHref}>{backLabel}</Link>
+        </p>
+      )}
+    </article>
+  );
+}
