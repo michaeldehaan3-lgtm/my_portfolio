@@ -16,28 +16,22 @@ export interface Project {
   youtubeAutoplay?: boolean;
 }
 
-function projectSortKey(project: Project): [number, number] {
+function projectSortKey(project: Project): number {
   const year = project.metadata?.year?.trim() ?? "";
   const matches = year.match(/\d{4}/g);
-  const years = matches?.map((y) => parseInt(y, 10)) ?? [];
-  const isOngoing = /ongoing/i.test(year);
+  const maxYear = matches?.length
+    ? Math.max(...matches.map((y) => parseInt(y, 10)))
+    : 0;
 
-  if (isOngoing) {
-    const startYear = years.length ? Math.min(...years) : 0;
-    return [1, startYear];
+  if (/ongoing/i.test(year)) {
+    return 1_000_000 + maxYear;
   }
 
-  const sortYear = years.length ? Math.max(...years) : 0;
-  return [0, sortYear];
+  return maxYear;
 }
 
 function sortProjectsByYear(projects: Project[]): Project[] {
-  return [...projects].sort((a, b) => {
-    const [tierA, yearA] = projectSortKey(a);
-    const [tierB, yearB] = projectSortKey(b);
-    if (tierB !== tierA) return tierB - tierA;
-    return yearB - yearA;
-  });
+  return [...projects].sort((a, b) => projectSortKey(b) - projectSortKey(a));
 }
 
 export const siteName = "Michael de Haan";
