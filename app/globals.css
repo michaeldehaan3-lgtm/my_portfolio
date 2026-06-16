@@ -205,7 +205,7 @@ a:hover img {
 }
 
 .project-card--role-models .project-card__image-wrap {
-  width: 50%;
+  width: calc(50% * 1.3);
   margin-left: auto;
   margin-right: auto;
 }
@@ -641,13 +641,16 @@ a:hover img {
   }
 
   .project-card--ponderosa .project-card__image-wrap,
-  .project-card--role-models .project-card__image-wrap,
   .project-card--drawing-estrangement .project-card__image-wrap,
   .project-card--sonic-storage .project-card__image-wrap,
   .project-card--resonant-ground .project-card__image-wrap,
   .project-card--braeside .project-card__image-wrap,
   .project-card--braeside-icon .project-card__image-wrap {
     width: 85%;
+  }
+
+  .project-card--role-models .project-card__image-wrap {
+    width: min(100%, calc(85% * 1.3));
   }
 
   .project-detail__title {
