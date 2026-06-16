@@ -13,7 +13,7 @@ export default function ProjectCard({ project, basePath }: ProjectCardProps) {
 
   return (
     <article
-      className={`project-card max-md:min-w-0 ${project.slug === "ponderosa" ? "project-card--ponderosa" : ""} ${project.slug === "role-models" ? "project-card--role-models" : ""} ${project.slug === "sonic-storage" ? "project-card--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-card--resonant-ground" : ""} ${project.slug === "braeside" ? "project-card--braeside" : ""} ${project.slug === "braeside-icon" ? "project-card--braeside-icon" : ""}`}
+      className={`project-card max-md:min-w-0 ${project.slug === "ponderosa" ? "project-card--ponderosa" : ""} ${project.slug === "role-models" ? "project-card--role-models" : ""} ${project.slug === "drawing-estrangement" ? "project-card--drawing-estrangement" : ""} ${project.slug === "sonic-storage" ? "project-card--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-card--resonant-ground" : ""} ${project.slug === "braeside" ? "project-card--braeside" : ""} ${project.slug === "braeside-icon" ? "project-card--braeside-icon" : ""}`}
     >
       <Link href={href} className="project-card__link">
         <div className="project-card__image-wrap">

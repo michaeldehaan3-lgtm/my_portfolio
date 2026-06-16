@@ -210,6 +210,12 @@ a:hover img {
   margin-right: auto;
 }
 
+.project-card--drawing-estrangement .project-card__image-wrap {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-card--sonic-storage .project-card__image-wrap {
   width: 77%;
   margin-left: auto;
@@ -342,6 +348,18 @@ a:hover img {
 
 .project-detail--role-models .project-detail__figure:first-child .project-detail__image-wrap {
   width: 50%;
+}
+
+.project-detail--drawing-estrangement .project-detail__images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-md);
+}
+
+.project-detail--drawing-estrangement .project-detail__image-wrap {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .project-detail--sonic-storage .project-detail__image-wrap {
@@ -582,6 +600,7 @@ a:hover img {
 
   .project-card--ponderosa .project-card__image-wrap,
   .project-card--role-models .project-card__image-wrap,
+  .project-card--drawing-estrangement .project-card__image-wrap,
   .project-card--sonic-storage .project-card__image-wrap,
   .project-card--resonant-ground .project-card__image-wrap,
   .project-card--braeside .project-card__image-wrap,
@@ -635,6 +654,11 @@ a:hover img {
 
   .project-detail--role-models .project-detail__figure:first-child .project-detail__image-wrap {
     width: 100%;
+  }
+
+  .project-detail--drawing-estrangement .project-detail__images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
   }
 
   .project-detail--ponderosa .project-detail__figure:nth-child(2) .project-detail__image-wrap {
