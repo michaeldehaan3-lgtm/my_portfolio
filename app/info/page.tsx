@@ -3,7 +3,7 @@ import { info } from "@/data/portfolio";
 
 export default function InfoPage() {
   return (
-    <div className="info-page">
+    <div className="info-page max-md:min-w-0 max-md:overflow-x-hidden">
       <div className="info-page__portrait-wrap">
         <Image
           src={info.portrait}

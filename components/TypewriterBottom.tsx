@@ -34,9 +34,9 @@ export default function TypewriterBottom({ text }: TypewriterBottomProps) {
   const visible = text.slice(0, visibleLength);
 
   return (
-    <div className="typewriter-fullpage">
-      <div className="typewriter-fullpage__inner">
-        <p className="typewriter-fullpage__text">
+    <div className="typewriter-fullpage max-md:overflow-x-hidden">
+      <div className="typewriter-fullpage__inner max-md:min-w-0">
+        <p className="typewriter-fullpage__text max-md:break-words">
           {visible}
           <span ref={endRef} />
         </p>

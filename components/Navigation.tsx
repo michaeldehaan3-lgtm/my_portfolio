@@ -17,7 +17,7 @@ export default function Navigation() {
   return (
     <>
       <button
-        className="nav-toggle"
+        className="nav-toggle max-md:min-h-[44px] max-md:px-3"
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-expanded={mobileOpen}
         aria-label="Toggle menu"

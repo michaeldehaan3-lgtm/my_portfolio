@@ -18,10 +18,10 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
 
   return (
     <article
-      className={`project-detail ${project.slug === "buffalo-bull-sheet" ? "project-detail--buffalo-bull-sheet" : ""} ${project.slug === "boy" ? "project-detail--boy" : ""} ${project.slug === "ponderosa" ? "project-detail--ponderosa" : ""} ${project.slug === "sonic-storage" ? "project-detail--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-detail--resonant-ground" : ""} ${project.slug === "braeside" ? "project-detail--braeside" : ""} ${project.slug === "braeside-icon" ? "project-detail--braeside-icon" : ""} ${project.slug === "oberon" ? "project-detail--oberon" : ""}`}
+      className={`project-detail max-md:min-w-0 max-md:overflow-x-hidden ${project.slug === "buffalo-bull-sheet" ? "project-detail--buffalo-bull-sheet" : ""} ${project.slug === "boy" ? "project-detail--boy" : ""} ${project.slug === "ponderosa" ? "project-detail--ponderosa" : ""} ${project.slug === "sonic-storage" ? "project-detail--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-detail--resonant-ground" : ""} ${project.slug === "braeside" ? "project-detail--braeside" : ""} ${project.slug === "braeside-icon" ? "project-detail--braeside-icon" : ""} ${project.slug === "oberon" ? "project-detail--oberon" : ""}`}
     >
       {project.slug !== "oberon" && (
-        <h1 className="project-detail__title">{project.title}</h1>
+        <h1 className="project-detail__title max-md:break-words">{project.title}</h1>
       )}
       {project.slug === "oberon" && (
         <TypewriterBottom

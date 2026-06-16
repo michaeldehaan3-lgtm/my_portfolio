@@ -31,7 +31,7 @@ export default function RootLayout({
               <div className="layout__nav-area">
                 <Navigation />
               </div>
-              <div className="layout__content">{children}</div>
+              <div className="layout__content max-md:min-w-0 max-md:overflow-x-hidden">{children}</div>
             </div>
           </main>
         </div>
