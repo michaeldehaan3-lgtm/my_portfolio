@@ -106,12 +106,12 @@ export const architecture: Project[] = [
     description: "Description forthcoming.",
     coverImage: "/design/rolemodels/cover.jpg",
     images: [
+      { src: "/design/rolemodels/images/design.jpg" },
       { src: "/design/rolemodels/images/01.jpg" },
       { src: "/design/rolemodels/images/02.jpg" },
       { src: "/design/rolemodels/images/03.jpg" },
       { src: "/design/rolemodels/images/04.jpg" },
       { src: "/design/rolemodels/images/05.jpg" },
-      { src: "/design/rolemodels/images/design.jpg" },
     ],
   },
   {

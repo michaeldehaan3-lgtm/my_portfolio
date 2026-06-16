@@ -340,6 +340,10 @@ a:hover img {
   display: block;
 }
 
+.project-detail--role-models .project-detail__figure:first-child .project-detail__image-wrap {
+  width: 50%;
+}
+
 .project-detail--sonic-storage .project-detail__image-wrap {
   width: 50%;
   margin-left: auto;
@@ -627,6 +631,10 @@ a:hover img {
   .project-detail--ponderosa .project-detail__image-wrap,
   .project-detail--role-models .project-detail__image-wrap {
     width: 85%;
+  }
+
+  .project-detail--role-models .project-detail__figure:first-child .project-detail__image-wrap {
+    width: 100%;
   }
 
   .project-detail--ponderosa .project-detail__figure:nth-child(2) .project-detail__image-wrap {
