@@ -237,6 +237,10 @@ a:hover img {
   text-align: center;
 }
 
+.project-card--architecture .project-card__caption {
+  font-size: 0.84rem;
+}
+
 /* --- Project detail --- */
 .project-detail__title {
   font-size: 2rem;
@@ -549,6 +553,10 @@ a:hover img {
     letter-spacing: 0.08em;
     padding: 0 var(--space-xs);
     overflow-wrap: anywhere;
+  }
+
+  .project-card--architecture .project-card__caption {
+    font-size: 0.7rem;
   }
 
   .project-card--ponderosa .project-card__image-wrap,
