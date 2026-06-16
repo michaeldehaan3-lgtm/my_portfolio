@@ -204,6 +204,12 @@ a:hover img {
   margin-right: auto;
 }
 
+.project-card--role-models .project-card__image-wrap {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-card--sonic-storage .project-card__image-wrap {
   width: 77%;
   margin-left: auto;
@@ -237,8 +243,10 @@ a:hover img {
   text-align: center;
 }
 
-.project-card--architecture .project-card__caption {
-  font-size: 0.84rem;
+.project-grid--architecture .project-card__caption,
+.project-card__caption--architecture {
+  font-size: calc(1.2rem * 0.7);
+  letter-spacing: 0.07em;
 }
 
 /* --- Project detail --- */
@@ -319,6 +327,13 @@ a:hover img {
 }
 
 .project-detail--ponderosa .project-detail__image-wrap {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.project-detail--role-models .project-detail__image-wrap {
   width: 25%;
   margin-left: auto;
   margin-right: auto;
@@ -555,11 +570,14 @@ a:hover img {
     overflow-wrap: anywhere;
   }
 
-  .project-card--architecture .project-card__caption {
-    font-size: 0.7rem;
+  .project-grid--architecture .project-card__caption,
+  .project-card__caption--architecture {
+    font-size: calc(1rem * 0.7);
+    letter-spacing: 0.056em;
   }
 
   .project-card--ponderosa .project-card__image-wrap,
+  .project-card--role-models .project-card__image-wrap,
   .project-card--sonic-storage .project-card__image-wrap,
   .project-card--resonant-ground .project-card__image-wrap,
   .project-card--braeside .project-card__image-wrap,
@@ -606,7 +624,8 @@ a:hover img {
     width: 90%;
   }
 
-  .project-detail--ponderosa .project-detail__image-wrap {
+  .project-detail--ponderosa .project-detail__image-wrap,
+  .project-detail--role-models .project-detail__image-wrap {
     width: 85%;
   }
 

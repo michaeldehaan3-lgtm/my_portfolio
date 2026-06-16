@@ -13,7 +13,7 @@ export default function ProjectCard({ project, basePath }: ProjectCardProps) {
 
   return (
     <article
-      className={`project-card max-md:min-w-0 ${basePath === "architecture" ? "project-card--architecture" : ""} ${project.slug === "ponderosa" ? "project-card--ponderosa" : ""} ${project.slug === "sonic-storage" ? "project-card--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-card--resonant-ground" : ""} ${project.slug === "braeside" ? "project-card--braeside" : ""} ${project.slug === "braeside-icon" ? "project-card--braeside-icon" : ""}`}
+      className={`project-card max-md:min-w-0 ${project.slug === "ponderosa" ? "project-card--ponderosa" : ""} ${project.slug === "role-models" ? "project-card--role-models" : ""} ${project.slug === "sonic-storage" ? "project-card--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-card--resonant-ground" : ""} ${project.slug === "braeside" ? "project-card--braeside" : ""} ${project.slug === "braeside-icon" ? "project-card--braeside-icon" : ""}`}
     >
       <Link href={href} className="project-card__link">
         <div className="project-card__image-wrap">
@@ -23,7 +23,9 @@ export default function ProjectCard({ project, basePath }: ProjectCardProps) {
             className="project-card__image"
           />
         </div>
-        <p className="project-card__caption max-md:break-words max-md:px-1">
+        <p
+          className={`project-card__caption max-md:break-words max-md:px-1${basePath === "architecture" ? " project-card__caption--architecture" : ""}`}
+        >
           {project.caption || project.title}
         </p>
       </Link>

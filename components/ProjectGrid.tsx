@@ -8,7 +8,9 @@ interface ProjectGridProps {
 
 export default function ProjectGrid({ projects, basePath }: ProjectGridProps) {
   return (
-    <div className="project-grid max-md:min-w-0">
+    <div
+      className={`project-grid max-md:min-w-0${basePath === "architecture" ? " project-grid--architecture" : ""}`}
+    >
       {projects.map((project) => (
         <ProjectCard key={project.slug} project={project} basePath={basePath} />
       ))}
