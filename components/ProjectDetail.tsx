@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/data/portfolio";
 import TypewriterBottom from "@/components/TypewriterBottom";
-import OberonCarousel from "@/components/OberonCarousel";
 
 interface ProjectDetailProps {
   project: Project;
@@ -33,9 +32,6 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
           }
         />
       )}
-      {project.slug === "oberon" && (
-        <OberonCarousel images={project.images} />
-      )}
       {project.slug !== "oberon" && (
         <>
           {Array.isArray(project.description) ? (
@@ -50,7 +46,9 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
         </>
       )}
 
-      {project.metadata && Object.keys(project.metadata).length > 0 && (
+      {project.metadata &&
+        project.slug !== "oberon" &&
+        Object.keys(project.metadata).length > 0 && (
         <dl className="project-detail__metadata">
           {project.metadata.year && project.slug !== "oberon" && (
             <>

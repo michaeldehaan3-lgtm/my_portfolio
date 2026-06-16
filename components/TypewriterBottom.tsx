@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface TypewriterBottomProps {
   text: string;
@@ -13,6 +13,7 @@ const PUNCTUATION = /[.,!?;:—]/;
 
 export default function TypewriterBottom({ text }: TypewriterBottomProps) {
   const [visibleLength, setVisibleLength] = useState(0);
+  const endRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (visibleLength >= text.length) return;
@@ -26,12 +27,19 @@ export default function TypewriterBottom({ text }: TypewriterBottomProps) {
     return () => clearTimeout(timer);
   }, [text, visibleLength]);
 
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ block: "end" });
+  }, [visibleLength]);
+
   const visible = text.slice(0, visibleLength);
 
   return (
-    <div className="typewriter-bottom">
-      <div className="typewriter-bottom__inner">
-        <p className="typewriter-bottom__text">{visible}</p>
+    <div className="typewriter-fullpage">
+      <div className="typewriter-fullpage__inner">
+        <p className="typewriter-fullpage__text">
+          {visible}
+          <span ref={endRef} />
+        </p>
       </div>
     </div>
   );
