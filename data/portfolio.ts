@@ -120,8 +120,16 @@ export const architecture: Project[] = [
     slug: "drawing-estrangement",
     title: "Drawing Estrangement",
     caption: "Drawing Estrangement",
-    description: "Description forthcoming.",
+    description: [
+      "This project explores estrangement as a method of architectural inquiry through the analysis and translation of cinematic space. Drawing from a selected sequence in World on a Wire (1973), a two-part television miniseries directed by Rainer Werner Fassbinder, the work investigates how film constructs spatial continuity from spaces whose physical relationships remain uncertain or unknowable. While viewers initially experience these environments as coherent and continuous, closer examination reveals them to be carefully assembled through framing, editing, reflection, movement, and perspective.",
+      "Using the film sequence as a point of departure, a series of spaces were reconstructed as a three-dimensional digital model based on their perceived relationships within the film. The project then translated this model into a set of two-dimensional drawings that sought to preserve and amplify the ambiguity present in the original sequence. Through linework, hierarchy, projection, and representation, the drawings explored moments where orientation, depth, and spatial relationships become uncertain.",
+      "The final stage extended these investigations through animation. Rather than simply representing the reconstructed model, animation was used to further develop the sense of estrangement found within the film, exploring how movement and shifting perspectives can destabilize spatial understanding. Moving from film to model, drawing, and animation, the project examines how architectural representation can be used not only to describe space but also to question how space is perceived, constructed, and understood.",
+    ],
     coverImage: "/design/drawingestrangement/cover.jpg",
+    metadata: {
+      year: "2026",
+      location: "Calgary",
+    },
     youtubeUrl: "https://www.youtube.com/watch?v=tQQTKVrxvjE",
     youtubeAutoplay: true,
     images: [
