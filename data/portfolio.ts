@@ -105,8 +105,13 @@ export const architecture: Project[] = [
     slug: "role-models",
     title: "Role Models",
     caption: "Role Models",
-    description: "Description forthcoming.",
+    description:
+      "Modeled in Rhino through a subtractive design process, this project explores the relationship between void and form. The resulting geometry was recursively projected back onto itself to investigate the mapping of materiality through digital operations and representational techniques. These explorations culminated in the fabrication of a physical model constructed from paper and other sheet materials, which were laser cut, scored, folded, and assembled into a three-dimensional form. The project examines the translation of complex digital geometries into tangible architectural artifacts through processes of projection, accumulation, and fabrication.",
     coverImage: "/design/rolemodels/cover.jpg",
+    metadata: {
+      year: "2023",
+      location: "Calgary",
+    },
     images: [
       { src: "/design/rolemodels/images/design.jpg" },
       { src: "/design/rolemodels/images/01.jpg" },
