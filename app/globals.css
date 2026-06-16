@@ -357,9 +357,9 @@ a:hover img {
 }
 
 .project-detail--drawing-estrangement .project-detail__image-wrap {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-detail--sonic-storage .project-detail__image-wrap {
