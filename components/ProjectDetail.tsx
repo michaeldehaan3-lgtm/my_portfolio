@@ -12,9 +12,31 @@ const sectionLabel =
   (basePath: string) =>
   (basePath === "architecture" ? "Architecture / Design" : "Photography");
 
+function getYoutubeEmbedUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === "youtu.be") {
+      const id = parsed.pathname.replace(/^\//, "");
+      return id ? `https://www.youtube.com/embed/${id}` : null;
+    }
+    if (parsed.hostname.includes("youtube.com")) {
+      const id = parsed.searchParams.get("v");
+      if (id) return `https://www.youtube.com/embed/${id}`;
+      const embedMatch = parsed.pathname.match(/^\/embed\/([^/]+)/);
+      if (embedMatch) return `https://www.youtube.com/embed/${embedMatch[1]}`;
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
 export default function ProjectDetail({ project, basePath }: ProjectDetailProps) {
   const backLabel = `Back to ${sectionLabel(basePath)}`;
   const backHref = `/${basePath}`;
+  const youtubeEmbedUrl = project.youtubeUrl
+    ? getYoutubeEmbedUrl(project.youtubeUrl)
+    : null;
 
   return (
     <article
@@ -22,6 +44,18 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
     >
       {project.slug !== "oberon" && (
         <h1 className="project-detail__title max-md:break-words">{project.title}</h1>
+      )}
+      {youtubeEmbedUrl && project.slug !== "oberon" && (
+        <div className="project-detail__video">
+          <div className="project-detail__video-frame">
+            <iframe
+              src={youtubeEmbedUrl}
+              title={`${project.title} video`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
       )}
       {project.slug === "oberon" && (
         <TypewriterBottom
