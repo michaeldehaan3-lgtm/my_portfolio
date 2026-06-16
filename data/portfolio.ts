@@ -16,9 +16,33 @@ export interface Project {
   youtubeAutoplay?: boolean;
 }
 
+function projectSortKey(project: Project): [number, number] {
+  const year = project.metadata?.year?.trim() ?? "";
+  const matches = year.match(/\d{4}/g);
+  const years = matches?.map((y) => parseInt(y, 10)) ?? [];
+  const isOngoing = /ongoing/i.test(year);
+
+  if (isOngoing) {
+    const startYear = years.length ? Math.min(...years) : 0;
+    return [1, startYear];
+  }
+
+  const sortYear = years.length ? Math.max(...years) : 0;
+  return [0, sortYear];
+}
+
+function sortProjectsByYear(projects: Project[]): Project[] {
+  return [...projects].sort((a, b) => {
+    const [tierA, yearA] = projectSortKey(a);
+    const [tierB, yearB] = projectSortKey(b);
+    if (tierB !== tierA) return tierB - tierA;
+    return yearB - yearA;
+  });
+}
+
 export const siteName = "Michael de Haan";
 
-export const architecture: Project[] = [
+export const architecture = sortProjectsByYear([
   {
     slug: "ponderosa",
     title: "Ponderosa",
@@ -41,7 +65,8 @@ export const architecture: Project[] = [
     slug: "sonic-storage",
     title: "Sonic Storage",
     caption: "Sonic Storage",
-    description: "Description forthcoming.",
+    description:
+      "A plywood shelf designed and built to accommodate a growing record collection.",
     coverImage: "/design/sonicstorage/cover.jpg",
     metadata: {
       year: "2025",
@@ -254,9 +279,9 @@ export const architecture: Project[] = [
       { src: "/design/oberon/images/11.png" },
     ],
   },
-];
+]);
 
-export const photography: Project[] = [
+export const photography = sortProjectsByYear([
   {
     slug: "buffalo-bull-sheet",
     title: "Buffalo Bull Sheet",
@@ -306,7 +331,7 @@ export const photography: Project[] = [
       { src: "/photography/boy/images/06.jpg" },
     ],
   },
-];
+]);
 
 export const info = {
   portrait: "/headshot/headshot.jpeg",
