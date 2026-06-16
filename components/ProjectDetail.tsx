@@ -12,30 +12,43 @@ const sectionLabel =
   (basePath: string) =>
   (basePath === "architecture" ? "Architecture / Design" : "Photography");
 
-function getYoutubeEmbedUrl(url: string): string | null {
+function getYoutubeEmbedUrl(url: string, autoplay = false): string | null {
+  let embedUrl: string | null = null;
+
   try {
     const parsed = new URL(url);
     if (parsed.hostname === "youtu.be") {
       const id = parsed.pathname.replace(/^\//, "");
-      return id ? `https://www.youtube.com/embed/${id}` : null;
-    }
-    if (parsed.hostname.includes("youtube.com")) {
+      embedUrl = id ? `https://www.youtube.com/embed/${id}` : null;
+    } else if (parsed.hostname.includes("youtube.com")) {
       const id = parsed.searchParams.get("v");
-      if (id) return `https://www.youtube.com/embed/${id}`;
+      if (id) embedUrl = `https://www.youtube.com/embed/${id}`;
       const embedMatch = parsed.pathname.match(/^\/embed\/([^/]+)/);
-      if (embedMatch) return `https://www.youtube.com/embed/${embedMatch[1]}`;
+      if (embedMatch) embedUrl = `https://www.youtube.com/embed/${embedMatch[1]}`;
     }
   } catch {
     return null;
   }
-  return null;
+
+  if (!embedUrl) return null;
+
+  if (autoplay) {
+    const params = new URLSearchParams({
+      autoplay: "1",
+      mute: "1",
+      playsinline: "1",
+    });
+    embedUrl = `${embedUrl}?${params.toString()}`;
+  }
+
+  return embedUrl;
 }
 
 export default function ProjectDetail({ project, basePath }: ProjectDetailProps) {
   const backLabel = `Back to ${sectionLabel(basePath)}`;
   const backHref = `/${basePath}`;
   const youtubeEmbedUrl = project.youtubeUrl
-    ? getYoutubeEmbedUrl(project.youtubeUrl)
+    ? getYoutubeEmbedUrl(project.youtubeUrl, project.youtubeAutoplay)
     : null;
 
   return (

@@ -13,6 +13,7 @@ export interface Project {
   };
   images: { src: string; caption?: string }[];
   youtubeUrl?: string;
+  youtubeAutoplay?: boolean;
 }
 
 export const siteName = "Michael de Haan";
@@ -122,6 +123,7 @@ export const architecture: Project[] = [
     description: "Description forthcoming.",
     coverImage: "/design/drawingestrangement/cover.jpg",
     youtubeUrl: "https://www.youtube.com/watch?v=tQQTKVrxvjE",
+    youtubeAutoplay: true,
     images: [
       { src: "/design/drawingestrangement/images/01.jpg" },
       { src: "/design/drawingestrangement/images/02.gif" },

@@ -375,11 +375,26 @@ a:hover img {
 .project-detail--drawing-estrangement .project-detail__images {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg) var(--space-md);
+  gap: var(--space-lg) var(--space-xs);
 }
 
 .project-detail--drawing-estrangement .project-detail__image-wrap {
   width: 50%;
+}
+
+.project-detail--drawing-estrangement .project-detail__figure:nth-child(odd) .project-detail__image-wrap {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.project-detail--drawing-estrangement .project-detail__figure:nth-child(even) .project-detail__image-wrap {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.project-detail--drawing-estrangement .project-detail__video {
+  width: calc(50% + var(--space-xs) / 2);
+  max-width: calc(50% + var(--space-xs) / 2);
   margin-left: auto;
   margin-right: auto;
 }
@@ -680,7 +695,7 @@ a:hover img {
 
   .project-detail--drawing-estrangement .project-detail__images {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-md);
+    gap: var(--space-md) var(--space-xs);
   }
 
   .project-detail--ponderosa .project-detail__figure:nth-child(2) .project-detail__image-wrap {
