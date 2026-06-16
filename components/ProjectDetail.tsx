@@ -58,18 +58,6 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
       {project.slug !== "oberon" && (
         <h1 className="project-detail__title max-md:break-words">{project.title}</h1>
       )}
-      {youtubeEmbedUrl && project.slug !== "oberon" && (
-        <div className="project-detail__video">
-          <div className="project-detail__video-frame">
-            <iframe
-              src={youtubeEmbedUrl}
-              title={`${project.title} video`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
       {project.slug === "oberon" && (
         <TypewriterBottom
           text={
@@ -128,6 +116,19 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
             </>
           )}
         </dl>
+      )}
+
+      {youtubeEmbedUrl && project.slug !== "oberon" && (
+        <div className="project-detail__video">
+          <div className="project-detail__video-frame">
+            <iframe
+              src={youtubeEmbedUrl}
+              title={`${project.title} video`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
       )}
 
       {project.slug !== "oberon" && (
