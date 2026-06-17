@@ -266,7 +266,7 @@ a:hover img {
 .project-detail__description {
   max-width: 65ch;
   margin: 0 0 var(--space-xl);
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.65;
 }
 
@@ -605,7 +605,7 @@ a:hover img {
 
 .info-page__intro {
   max-width: 65ch;
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin: 0 0 var(--space-md);
 }
@@ -737,7 +737,7 @@ a:hover img {
 
   .project-detail__description {
     max-width: 100%;
-    font-size: 0.75rem;
+    font-size: 1rem;
     overflow-wrap: anywhere;
   }
 
@@ -852,7 +852,7 @@ a:hover img {
   }
 
   .info-page__intro {
-    font-size: 0.75rem;
+    font-size: 1rem;
     max-width: 100%;
     overflow-wrap: anywhere;
   }
