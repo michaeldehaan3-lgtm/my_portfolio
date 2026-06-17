@@ -98,8 +98,8 @@ export const architecture = sortProjectsByYear([
     },
     images: [
       { src: "/design/resonantground/images/01.jpg" },
-      { src: "/design/resonantground/images/05.jpg" },
-      { src: "/design/resonantground/images/06.jpg" },
+      { src: "/design/resonantground/images/05.jpg", caption: "Floor 1" },
+      { src: "/design/resonantground/images/06.jpg", caption: "Floor 3" },
       { src: "/design/resonantground/images/02.jpg" },
       { src: "/design/resonantground/images/03.jpg" },
       { src: "/design/resonantground/images/04.jpg" },

@@ -487,6 +487,8 @@ a:hover img {
   display: block;
 }
 
+.project-detail--resonant-ground .project-detail__figure:nth-child(2) .project-detail__image-wrap,
+.project-detail--resonant-ground .project-detail__figure:nth-child(3) .project-detail__image-wrap,
 .project-detail--resonant-ground .project-detail__figure:nth-child(4) .project-detail__image-wrap,
 .project-detail--resonant-ground .project-detail__figure:nth-child(5) .project-detail__image-wrap {
   width: 60%;
@@ -801,6 +803,8 @@ a:hover img {
     width: 85%;
   }
 
+  .project-detail--resonant-ground .project-detail__figure:nth-child(2) .project-detail__image-wrap,
+  .project-detail--resonant-ground .project-detail__figure:nth-child(3) .project-detail__image-wrap,
   .project-detail--resonant-ground .project-detail__figure:nth-child(4) .project-detail__image-wrap,
   .project-detail--resonant-ground .project-detail__figure:nth-child(5) .project-detail__image-wrap {
     width: 60%;
