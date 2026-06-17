@@ -1,3 +1,13 @@
+export interface ProjectImage {
+  src: string;
+  caption?: string;
+}
+
+export interface ProjectImageGroup {
+  title: string;
+  images: ProjectImage[];
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -11,7 +21,8 @@ export interface Project {
     tools?: string;
     collaborators?: string;
   };
-  images: { src: string; caption?: string }[];
+  images: ProjectImage[];
+  imageGroups?: ProjectImageGroup[];
   youtubeUrl?: string;
   youtubeAutoplay?: boolean;
 }
@@ -169,6 +180,49 @@ export const architecture = sortProjectsByYear([
       { src: "/design/drawingestrangement/images/10.gif" },
       { src: "/design/drawingestrangement/images/11.jpg" },
       { src: "/design/drawingestrangement/images/12.gif" },
+    ],
+  },
+  {
+    slug: "steel-and-cable",
+    title: "Steel and Cable",
+    caption: "Steel and Cable",
+    description:
+      "Three steel structures built from rod, cable, eyelets, and welded connections. The project resulted in a tower, a bridge, and a cantilever, each developed around a distinct structural system. Designed and fabricated as physical models, the work explores how structure can be expressed through material, connection, and form.",
+    coverImage: "/design/steelandcable/cover.jpeg",
+    metadata: {
+      year: "2024",
+      location: "Calgary",
+      collaborators: "Bryce Meintzer, Ethan Scrase, and Nolan Miranda",
+    },
+    images: [],
+    imageGroups: [
+      {
+        title: "Tower",
+        images: [
+          { src: "/design/steelandcable/images/01.jpeg" },
+          { src: "/design/steelandcable/images/02.jpeg" },
+          { src: "/design/steelandcable/images/03.jpeg" },
+          { src: "/design/steelandcable/images/04.jpeg" },
+        ],
+      },
+      {
+        title: "Bridge",
+        images: [
+          { src: "/design/steelandcable/images/05.jpeg" },
+          { src: "/design/steelandcable/images/06.jpeg" },
+          { src: "/design/steelandcable/images/07.jpeg" },
+          { src: "/design/steelandcable/images/08.jpeg" },
+        ],
+      },
+      {
+        title: "Cantilever",
+        images: [
+          { src: "/design/steelandcable/images/09.jpeg" },
+          { src: "/design/steelandcable/images/10.jpeg" },
+          { src: "/design/steelandcable/images/11.jpeg" },
+          { src: "/design/steelandcable/images/12.jpeg" },
+        ],
+      },
     ],
   },
   {

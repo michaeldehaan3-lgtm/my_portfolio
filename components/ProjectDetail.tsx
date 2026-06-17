@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "@/data/portfolio";
+import { Project, ProjectImage } from "@/data/portfolio";
 import TypewriterBottom from "@/components/TypewriterBottom";
 
 interface ProjectDetailProps {
@@ -44,6 +44,32 @@ function getYoutubeEmbedUrl(url: string, autoplay = false): string | null {
   return embedUrl;
 }
 
+function ProjectImageFigure({
+  img,
+  alt,
+}: {
+  img: ProjectImage;
+  alt: string;
+}) {
+  return (
+    <figure className="project-detail__figure">
+      <div className="project-detail__image-wrap">
+        <Image
+          src={img.src}
+          alt={img.caption || alt}
+          width={1200}
+          height={800}
+          className="project-detail__image"
+          unoptimized
+        />
+      </div>
+      {img.caption && (
+        <figcaption className="project-detail__figcaption">{img.caption}</figcaption>
+      )}
+    </figure>
+  );
+}
+
 export default function ProjectDetail({ project, basePath }: ProjectDetailProps) {
   const backLabel = `Back to ${sectionLabel(basePath)}`;
   const backHref = `/${basePath}`;
@@ -53,7 +79,7 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
 
   return (
     <article
-      className={`project-detail max-md:min-w-0 max-md:overflow-x-hidden ${project.slug === "buffalo-bull-sheet" ? "project-detail--buffalo-bull-sheet" : ""} ${project.slug === "boy" ? "project-detail--boy" : ""} ${project.slug === "ponderosa" ? "project-detail--ponderosa" : ""} ${project.slug === "role-models" ? "project-detail--role-models" : ""} ${project.slug === "drawing-estrangement" ? "project-detail--drawing-estrangement" : ""} ${project.slug === "sonic-storage" ? "project-detail--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-detail--resonant-ground" : ""} ${project.slug === "braeside" ? "project-detail--braeside" : ""} ${project.slug === "braeside-icon" ? "project-detail--braeside-icon" : ""} ${project.slug === "oberon" ? "project-detail--oberon" : ""}`}
+      className={`project-detail max-md:min-w-0 max-md:overflow-x-hidden ${project.slug === "buffalo-bull-sheet" ? "project-detail--buffalo-bull-sheet" : ""} ${project.slug === "boy" ? "project-detail--boy" : ""} ${project.slug === "ponderosa" ? "project-detail--ponderosa" : ""} ${project.slug === "role-models" ? "project-detail--role-models" : ""} ${project.slug === "drawing-estrangement" ? "project-detail--drawing-estrangement" : ""} ${project.slug === "steel-and-cable" ? "project-detail--steel-and-cable" : ""} ${project.slug === "sonic-storage" ? "project-detail--sonic-storage" : ""} ${project.slug === "resonant-ground" ? "project-detail--resonant-ground" : ""} ${project.slug === "braeside" ? "project-detail--braeside" : ""} ${project.slug === "braeside-icon" ? "project-detail--braeside-icon" : ""} ${project.slug === "oberon" ? "project-detail--oberon" : ""}`}
     >
       {project.slug !== "oberon" && (
         <h1 className="project-detail__title max-md:break-words">{project.title}</h1>
@@ -131,28 +157,35 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
         </div>
       )}
 
-      {project.slug !== "oberon" && (
-        <div className="project-detail__images">
-          {project.images.map((img, i) => (
-            <figure key={i} className="project-detail__figure">
-              <div className="project-detail__image-wrap">
-                <Image
-                  src={img.src}
-                  alt={img.caption || `${project.title} image ${i + 1}`}
-                  width={1200}
-                  height={800}
-                  className="project-detail__image"
-                  unoptimized
-                />
+      {project.slug !== "oberon" && project.imageGroups?.length ? (
+        <div className="project-detail__image-groups">
+          {project.imageGroups.map((group, groupIndex) => (
+            <section key={groupIndex} className="project-detail__image-group">
+              <div className="project-detail__images project-detail__images--grid-2x2">
+                {group.images.map((img, imageIndex) => (
+                  <ProjectImageFigure
+                    key={imageIndex}
+                    img={img}
+                    alt={`${project.title} image ${groupIndex * 4 + imageIndex + 1}`}
+                  />
+                ))}
               </div>
-              {img.caption && (
-                <figcaption className="project-detail__figcaption">
-                  {img.caption}
-                </figcaption>
-              )}
-            </figure>
+              <h2 className="project-detail__image-group-title">{group.title}</h2>
+            </section>
           ))}
         </div>
+      ) : (
+        project.slug !== "oberon" && (
+          <div className="project-detail__images">
+            {project.images.map((img, i) => (
+              <ProjectImageFigure
+                key={i}
+                img={img}
+                alt={`${project.title} image ${i + 1}`}
+              />
+            ))}
+          </div>
+        )
       )}
 
       {project.slug !== "oberon" && (

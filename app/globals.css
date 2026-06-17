@@ -404,6 +404,44 @@ a:hover img {
   margin-right: auto;
 }
 
+.project-detail--steel-and-cable .project-detail__image-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.project-detail--steel-and-cable .project-detail__images--grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-bottom: 0;
+}
+
+.project-detail--steel-and-cable .project-detail__image-wrap {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-detail--steel-and-cable .project-detail__image-group-title {
+  margin: var(--space-md) 0 0;
+  max-width: 65ch;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.65;
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.project-card--steel-and-cable .project-card__image-wrap {
+  width: 77%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-detail--sonic-storage .project-detail__image-wrap {
   width: 50%;
   margin-left: auto;
@@ -642,6 +680,7 @@ a:hover img {
 
   .project-card--ponderosa .project-card__image-wrap,
   .project-card--drawing-estrangement .project-card__image-wrap,
+  .project-card--steel-and-cable .project-card__image-wrap,
   .project-card--sonic-storage .project-card__image-wrap,
   .project-card--resonant-ground .project-card__image-wrap,
   .project-card--braeside .project-card__image-wrap,
@@ -709,6 +748,15 @@ a:hover img {
   .project-detail--drawing-estrangement .project-detail__images {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--drawing-estrangement-row-gap) var(--drawing-estrangement-col-gap);
+  }
+
+  .project-detail--steel-and-cable .project-detail__images--grid-2x2 {
+    gap: var(--space-sm);
+  }
+
+  .project-detail--steel-and-cable .project-detail__image-group-title {
+    max-width: 100%;
+    font-size: 0.95rem;
   }
 
   .project-detail--ponderosa .project-detail__figure:nth-child(2) .project-detail__image-wrap {
