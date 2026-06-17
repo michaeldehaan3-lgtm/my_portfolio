@@ -487,15 +487,15 @@ a:hover img {
   display: block;
 }
 
-.project-detail--resonant-ground .project-detail__figure:nth-child(2) .project-detail__image-wrap,
-.project-detail--resonant-ground .project-detail__figure:nth-child(3) .project-detail__image-wrap {
+.project-detail--resonant-ground .project-detail__figure:nth-child(4) .project-detail__image-wrap,
+.project-detail--resonant-ground .project-detail__figure:nth-child(5) .project-detail__image-wrap {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-.project-detail--resonant-ground .project-detail__figure:nth-child(4) .project-detail__image-wrap {
+.project-detail--resonant-ground .project-detail__figure:nth-child(6) .project-detail__image-wrap {
   width: 32%;
   margin-left: auto;
   margin-right: auto;
@@ -801,12 +801,12 @@ a:hover img {
     width: 85%;
   }
 
-  .project-detail--resonant-ground .project-detail__figure:nth-child(2) .project-detail__image-wrap,
-  .project-detail--resonant-ground .project-detail__figure:nth-child(3) .project-detail__image-wrap {
+  .project-detail--resonant-ground .project-detail__figure:nth-child(4) .project-detail__image-wrap,
+  .project-detail--resonant-ground .project-detail__figure:nth-child(5) .project-detail__image-wrap {
     width: 60%;
   }
 
-  .project-detail--resonant-ground .project-detail__figure:nth-child(4) .project-detail__image-wrap {
+  .project-detail--resonant-ground .project-detail__figure:nth-child(6) .project-detail__image-wrap {
     width: 80%;
   }
 
