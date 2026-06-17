@@ -266,7 +266,7 @@ a:hover img {
 .project-detail__description {
   max-width: 65ch;
   margin: 0 0 var(--space-xl);
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: 1.65;
 }
 
@@ -583,15 +583,17 @@ a:hover img {
 }
 
 .info-page__credit {
+  max-width: 65ch;
+  margin: 0 auto var(--space-xl);
   font-size: var(--size-caption);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-text-muted);
-  margin: 0 0 var(--space-xl);
 }
 
 .info-page__section {
-  margin-bottom: var(--space-xl);
+  max-width: 65ch;
+  margin: 0 auto var(--space-xl);
 }
 
 .info-page__heading {
@@ -605,7 +607,7 @@ a:hover img {
 
 .info-page__intro {
   max-width: 65ch;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: 1.7;
   margin: 0 0 var(--space-md);
 }
@@ -615,6 +617,8 @@ a:hover img {
 }
 
 .info-page__contact {
+  max-width: 65ch;
+  margin: 0 auto;
   font-size: 1rem;
 }
 
@@ -737,7 +741,7 @@ a:hover img {
 
   .project-detail__description {
     max-width: 100%;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     overflow-wrap: anywhere;
   }
 
@@ -851,15 +855,19 @@ a:hover img {
     font-size: 1.05rem;
   }
 
-  .info-page__intro {
-    font-size: 1rem;
+  .info-page__section,
+  .info-page__contact,
+  .info-page__credit {
     max-width: 100%;
+  }
+
+  .info-page__intro {
+    font-size: 0.9375rem;
     overflow-wrap: anywhere;
   }
 
   .info-page__contact {
     font-size: 1rem;
-    max-width: 100%;
     overflow-wrap: anywhere;
   }
 
