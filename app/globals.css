@@ -573,7 +573,7 @@ a:hover img {
 }
 
 .info-page__portrait {
-  width: 78%;
+  width: 62.4%;
   max-width: 100%;
   height: auto;
   display: block;
@@ -858,7 +858,7 @@ a:hover img {
   }
 
   .info-page__portrait {
-    width: 90%;
+    width: 72%;
   }
 }
 
