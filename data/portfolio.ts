@@ -81,6 +81,7 @@ export const architecture = sortProjectsByYear([
       { src: "/design/sonicstorage/images/01.jpg" },
       { src: "/design/sonicstorage/images/02.jpg" },
       { src: "/design/sonicstorage/images/03.jpg" },
+      { src: "/design/sonicstorage/images/04.jpg" },
     ],
   },
   {
@@ -311,6 +312,8 @@ export const architecture = sortProjectsByYear([
       "END OF MANUAL",
     ],
     coverImage: "/design/oberon/cover.png",
+    youtubeUrl: "https://www.youtube.com/watch?v=unVqtGvrToY",
+    youtubeAutoplay: true,
     metadata: {
       year: "2025",
       location: "",

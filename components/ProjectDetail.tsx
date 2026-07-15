@@ -91,6 +91,11 @@ export default function ProjectDetail({ project, basePath }: ProjectDetailProps)
               ? project.description.join("/")
               : project.description
           }
+          youtubeEmbedUrl={
+            project.youtubeUrl
+              ? getYoutubeEmbedUrl(project.youtubeUrl, true)
+              : null
+          }
         />
       )}
       {project.slug !== "oberon" && (
