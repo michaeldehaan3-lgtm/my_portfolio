@@ -390,7 +390,7 @@ export const info = {
   portrait: "/headshot/headshot.jpeg",
   photoCredit: "",
   intro: [
-    "I'm an architect and designer based in Calgary, Alberta.",
+    "I'm a designer and artist based in Calgary, Alberta.",
     "This site is a collection of projects, experiments, and the occasional rabbit hole. My interests span architecture, furniture, film, fabrication, and other forms of design that sit somewhere between thinking and making.",
     "I enjoy working across disciplines and scales, using design as a way to explore ideas through drawing, writing, modeling, and building. Most projects begin with a simple question and develop through a process of testing, iteration, and construction.",
     "Michael de Haan holds a Bachelor of Fine Arts in Visual Studies and a Master of Architecture from the University of Calgary. He is currently pursuing a PhD in Environmental Design at the University of Calgary, where his research explores spatial intelligence, computational design, and the development of digital systems that can reason across architectural and urban scales.",
